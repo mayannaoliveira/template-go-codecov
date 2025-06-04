@@ -2,22 +2,22 @@ name: Testing codecov
 on: [push, pull_request]
 jobs:
   build:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Set up Go
-      uses: actions/setup-go@v5
-      go-version: 'stable'
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        go-version: 'stable'
 
-    - name: Install dependencies
-      run: go mod download
+      - name: Install dependencies
+        run: go mod download
 
-    - name: Run tests and get coverage
-      run: go test -race -coverprofile=coverage.txt -covermode=atomic ./...
+      - name: Run tests and get coverage
+        run: go test -race -coverprofile=coverage.txt -covermode=atomic ./...
 
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v4
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
