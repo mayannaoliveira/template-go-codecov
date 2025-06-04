@@ -9,7 +9,8 @@ jobs:
 
       - name: Set up Go
         uses: actions/setup-go@v5
-        go-version: 'stable'
+        with:
+          go-version: 'stable'
 
       - name: Install dependencies
         run: go mod download
