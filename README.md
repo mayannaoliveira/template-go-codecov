@@ -10,9 +10,7 @@
 - Actions > Setting > Secrets > Insert the CODECOV_TOKENcode.
 
 
-
-
-
+[![.github/workflows/codecov.yaml](https://github.com/mayannaoliveira/template-go-codecov/actions/workflows/codecov.yaml/badge.svg)](https://github.com/mayannaoliveira/template-go-codecov/actions/workflows/codecov.yaml)
 
 
 
